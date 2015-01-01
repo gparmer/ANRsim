@@ -1,7 +1,7 @@
 ANRsim
 ======
 
-A discrete event simulator for Android: Netrunner, a collectable card game made by Fantasy Flight Games.
+A discrete event simulator for Android: Netrunner, a collectible card game made by Fantasy Flight Games.
 
 FAQ
 ===
@@ -9,12 +9,12 @@ FAQ
 Why a simulator, rather than a statistical analysis?
 ----------------------------------------------------
 
-A statistical analysis of many of the phenomenon within a typical economy, let alone the interactions between runners and coporations is intractable.  The first program I wrote to get information about simple runner economies did not answer a number of key questions:  What is the variablility within an economy, often referred to as its "consistency".  What is the interaction between many cards with dependencies (e.g. Prepaid Voice Pad with events)?  How does one account for changes in use of a card over time that are required in specific circumstances (Test Running out a Magnum Opus)?  The easiest way to answer these questions is with a simulation that has since turned into a full-blown discrete event simulation.
+A statistical analysis of many of the phenomenon within a typical economy, let alone the interactions between runners and corporations is intractable.  The first program I wrote to get information about simple runner economies did not answer a number of key questions:  What is the variability within an economy, often referred to as its "consistency".  What is the interaction between many cards with dependencies (e.g. Prepaid Voice Pad with events)?  How does one account for changes in use of a card over time that are required in specific circumstances (Test Running out a Magnum Opus)?  The easiest way to answer these questions is with a simulation that has since turned into a full-blown discrete event simulation.
 
 Why is it useful?
 -----------------
 
-The ANR community has many honed intuitions about what economies work under which circumstances.  This project is meant to investigate massive numbers of somewhat idealized games (i.e. a model of real games), to determine scientifically why some economties are better than others, under which circumstances, and provide guidance for deckbuilding.
+The ANR community has many honed intuitions about what economies work under which circumstances.  This project is meant to investigate massive numbers of somewhat idealized games (i.e. a model of real games), to determine scientifically why some economies are better than others, under which circumstances, and provide guidance for deckbuilding.
 
 What assumptions is the simulator making?
 -----------------------------------------
@@ -64,4 +64,4 @@ It needs to be fleshed out in a few areas.  Once they are done, I'll release it.
 Who am I?
 =========
 
-I'm a [professor](http://www.seas.gwu.edu/~gparmer) of CS at GWU.  I write systems, and  mainly hack on operating systems.  Our [*Composite*](http://composite.seas.gwu.edu) component-based operating system is my main passion.  However, when I need to de-stress, I play ANR.  The Capital Area Netrunner group is awesome for this.
+I'm a [professor](http://www.seas.gwu.edu/~gparmer) of CS at GWU.  I write systems, and mainly hack on operating systems.  Our [*Composite*](http://composite.seas.gwu.edu) component-based operating system is my main passion.  However, when I need to de-stress, I play ANR.  The Capital Area Netrunner group is awesome for this.
