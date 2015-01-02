@@ -43,27 +43,25 @@ The event package is commonly seen in many runner decks, the pvp list is the bac
 
 ## Credit Click Efficiency
 
-![Credit Curve](mean0.svg)
+<center>![Credit Curve](mean0.png)</center>
 
-![Credits per Click Derivative](mean1.svg)
+<center>![Credits per Click Derivative](mean1.png)</center>
 
 ## Draw Click Efficiency
 
-![Draw Curve](draw0.svg)
+<center>![Draw Curve](draw0.png)</center>
 
-![Draws per Click Derivative](draw1.svg)
+<center>![Draws per Click Derivative](draw1.png)</center>
 
 ## Consistency
 
-![90th percentile](90p0.svg)
-
+<center>![90th percentile](90p0.png)</center>
 
 # FAQ
 
 ## What's a discrete event simulator (DES)?
 
 A DES quantizes time, in our case, into clicks.  At each click, a set of events that manipulate the state of the hand, board, deck, and credit pool are executed.  An event might add future events (i.e. Earthrise Hotel sets future events for additional draw).  At its core, this is all that a DES is.
-
 ## What assumptions are made by the simulator?
 
 We have to make a number of assumptions so that we can get useful information out of the simulator.  These include:
