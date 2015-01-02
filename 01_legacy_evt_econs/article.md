@@ -69,11 +69,11 @@ This last point seems a little suspect.  If the variance of an economic package 
 
 **Discussion.**  We can see that **procons+evt** is still the most efficient in the long game, but in this case, there is quite a tempo hit (taking about 7 resource clicks to catch up from).  Overall, many of the approaches are still relatively efficient, but they take some time to get rolling.
 
-**Wait a second!**  Are we saying that *putting all of these economy cards into my deck isn't increasing the credit efficiency of clicks by any more than 0.4*!?  A normal event package has even less efficiency than clicking for credit?  Insanity!
+**Wait a second!**  Are we saying that *putting all of these economy cards into my deck isn't even as efficient as clicking for credits*!?  Insanity!
 
 Yes, but that's only half the story.  The other half is quality draw efficiency.  While clicking for credits might do better than **evt**, it would yield no cards, thus no options.  So to round out the story, we must also look at quality draw efficiency.
 
-## Quality Draw Click Efficiency
+## Quality Draw Efficiency
 
 So how many quality draws per resource click do each of the economic packages yield?  In the following graph, the dotted line has a slope of one, again for reference.  If we just clicked to draw, that line would result.
 
