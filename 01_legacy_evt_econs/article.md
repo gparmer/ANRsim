@@ -43,6 +43,7 @@ The event package is commonly seen in many runner decks, the pvp list is the bac
 
 ## Credit Click Efficiency
 
+<center><img src="mean0.png" width=50%></center>
 <center>![Credit Curve](mean0.png)</center>
 
 <center>![Credits per Click Derivative](mean1.png)</center>
