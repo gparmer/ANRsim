@@ -29,8 +29,8 @@ A number of assumptions are made that simply the game into a state that can be r
 Non-trivial aspects of the game we do consider:
 
 - Mulligan.
-- Starting hard size.
-- Deck size.
+- Starting hard and deck size.
+- Decision processes to determine which action to take out of a number of possibilities.
 - Many different cards, with their specific rules (e.g. Earthrise Hotel, Test Run, SMC, Lucky Find).
 
 Those are bad assumptions!  They don't represent a real game.
