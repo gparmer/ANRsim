@@ -43,19 +43,19 @@ The event package is commonly seen in many runner decks, the pvp list is the bac
 
 ## Credit Click Efficiency
 
-![Credit Curve](https://github.com/gparmer/ANRsim/01_legacy_evt_econs/mean0.svg)
+![Credit Curve](mean0.svg)
 
-![Credits per Click Derivative](https://github.com/gparmer/ANRsim/01_legacy_evt_econs/mean1.svg)
+![Credits per Click Derivative](mean1.svg)
 
 ## Draw Click Efficiency
 
-![Draw Curve](https://github.com/gparmer/ANRsim/01_legacy_evt_econs/draw0.svg)
+![Draw Curve](draw0.svg)
 
-![Draws per Click Derivative](https://github.com/gparmer/ANRsim/01_legacy_evt_econs/draw1.svg)
+![Draws per Click Derivative](draw1.svg)
 
 ## Consistency
 
-![90th percentile](https://github.com/gparmer/ANRsim/01_legacy_evt_econs/90p0.svg)
+![90th percentile](90p0.svg)
 
 
 # FAQ
