@@ -104,31 +104,17 @@ The results point to three significant dimensions that impact which credit and d
 - Decent draw, and high credit efficiency = **procons+evts**.
 - Medium-level draw and click efficiency = **pvp+evts+draw**.
 
-## Bonus: the Sure Gamble Challenge
-
-So lets revisit a previous question:  how efficient is Sure Gamble?  Hopefully it is clear now that it highly depends on the rest of the cards in the economic package.  For simplicity, I'm just going to look at the "steady-state" efficiency once the decks get rolling, and all the cards in the initial hand have been used.
-
-First, we have to understand the normal draw efficiency of each deck.  How many cards do you draw per click?  This doesn't consider *quality draws*, but sometimes this is still a useful metric, especially when we're determining the efficiency of a *given card*.
-
-<center><img src="draw1.png" width=500px></center>
-
-- **procons**: 
-- **procons+evt**:
-- **evt**:
-- **evt+draw**:
-- **kate:pvp+evts+draw**:
-
 # FAQ
 
 ## What's a discrete event simulator (DES)?
 
-A DES quantizes time, in our case, into clicks.  At each click, a set of events that manipulate the state of the hand, board, deck, and credit pool are executed.  An event might add future events (i.e. Earthrise Hotel sets future events for additional draw).  At its core, this is all that a DES is.
+A DES quantizes time, and executes a sequence of events at each time.  In our case, we quantize the system in into resource clicks.  At each click, a set of events that manipulate the state of the hand, board, deck, and credit pool are executed.  An event might add future events (i.e. Earthrise Hotel sets future events for additional draw).  At its core, this is all that a DES is.
 
 ## Why a simulator?
 
 Lets use the Sure Gamble example from before.  How many clicks does it cost in total?  The naive analysis is 1 to play, and 1 to draw.  But throw a Quality Time in the deck and it all changes.  Lets restate the Sure Gamble and Quality Time click costs (CC):
 
-`CC(SureGamble) = DE + 1`
+`CC(SureGamble) = 5CE + DE + 1`
 
 `CC(QualityTime) = 3CE + DE + 1`
 
@@ -142,7 +128,7 @@ There are two functions, `f` and `g` that determine the efficiencies *based on t
 
 Now factor in the odd rules of many cards in ANR (Test Run for Magnum Opus), and you realize that simply throwing math at the problem won't be sufficient.
 
-Thus, discrete event simulator.
+Thus, we use a discrete event simulator.
 
 ## What assumptions are made by the simulator?
 
