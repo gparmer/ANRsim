@@ -15,13 +15,13 @@ There are many aspects of ANR that we understand relatively well.  Sure Gamble i
 
 This article provides the results from a discrete event simulator of the runner economies of ANR that is able to answer these and many other questions.  In future articles, I'll expand beyond event economies.  However, event economies are quite popular, and it is not always clear which to choose for a given deck.  
 
-So our goal is to get some quantitative information that we can use to describe the various runner economies.  Most of these make some trade-offs - for example, ceding tempo for long-term efficiency - that must be matched with the rest of the deck for maximum efficiency.  Simply put, our goal is to understand the various aspects of economic and card-draw efficiency.
+So our goal is to get some quantitative information that we can use to describe the various runner economies.  Most of these make some trade-offs - for example, ceding tempo for long-term efficiency - that must be matched with the the specific requirements of your deck for maximum efficiency.  Simply put, our goal is to understand the various aspects of economic and card-draw efficiency.
 
 ## Back to Basics: Credits and Cards
 
-We enjoy seeing the likes of a good Medium dig or a successful Quest Completed.  The basis of all such plays is drawing the necessary breakers and tricks, and the money to install them and fund the runs.  It is not enough to focus on one, without the other.  Many economic packages impact draw efficiency, and vice-versa.  So lets start with a couple of definitions:
+We enjoy seeing the likes of a good Medium dig or a successful Quest Completed.  The basis of all such plays is *drawing* the necessary breakers and tricks, and the *credits* to install them and fund the runs.  There are many great articles that focus on the breakers and tricks parts of decks.  This will focus entirely on the credit and draw aspect.  It is not enough to focus on either draw or credits, without the other.  Many economic packages impact draw efficiency, and vice-versa.  More importantly, we'll see that most traditional economic engines trade one for the other.  Lets start with a couple of definitions:
 
-**Click efficiency** is the multiplicative factor that cards give you for spending your clicks on getting credits and cards.  Without playing any cards, ANR lets you trade a single click for a single credit or card, so this is the base-line efficiency.  At the high end, we see cards like Magnum Opus that gives us two credits for a single click, or Professional Contacts that gives us both a credit and a draw.  These efficiency multipliers are easy to understand (though the cost of the cards is less-so).  
+**Click efficiency** is the multiplicative factor that cards give you for spending your clicks on getting credits and cards.  Without playing any cards, ANR lets you trade a single click for a single credit or card, so this is the base-line efficiency.  At the high end, we see cards like Magnum Opus that gives us two credits for a single click, or Professional Contacts that gives us both a credit and a draw.  These efficiency multipliers are easy to understand (though the up-front cost of the cards is less-so).  
 
 However, this analysis gets complicated quickly.  What is the efficiency of Sure Gamble?  A click to draw, a click to play, and a net gain of 4 credits = 2 credits per click?  But what if you also include Diesel in your deck that increases the efficiency of your card draw.  Now Sure Gamble is more efficient as it is less than a click to draw it (on average)!  What about Quality Time that is net-zero efficient (one click to draw, one to play, and three credits = 5 clicks for 5 clicks worth of draw)?  It actually becomes more efficient with Sure Gamble as click efficiency for credits is increased, and more efficient with Diesel that increases click efficiency for draw.  And the increased efficiency of Quality Time also increase the efficiency of Sure Gamble and Diesel that both must be drawn.  These complex relationships are what motivate simulation to assess the click efficiency.
 
@@ -69,9 +69,9 @@ This last point seems a little suspect.  If the variance of an economic package 
 
 **Discussion.**  We can see that **procons+evt** is still the most efficient in the long game, but in this case, there is quite a tempo hit (taking about 7 resource clicks to catch up from).  Overall, many of the approaches are still relatively efficient, but they take some time to get rolling.
 
-**Wait a second!**  Are we saying that *putting all of these economy cards into my deck isn't even as efficient as clicking for credits*!?  Insanity!
+Lets take a step back for a second.  These results are a little distressing.  Are we saying that *we put all of these economy cards into our decks, and the result is often not even as efficient as clicking for credits?*!?  Insanity!
 
-Yes, but that's only half the story.  The other half is quality draw efficiency.  While clicking for credits might do better than **evt**, it would yield no cards, thus no options.  So to round out the story, we must also look at quality draw efficiency.
+Yes, yes we are.  But that's only half the story.  The other half is quality draw efficiency.  While clicking for credits might do better than **evt**, it would yield no cards, thus no options.  So to round out the story, we must also look at quality draw efficiency.
 
 ## Quality Draw Efficiency
 
@@ -93,16 +93,26 @@ The next graph emphasizes the click efficiency for quality draws.  All the **dra
 
 The results point to three significant dimensions that impact which credit and draw package is best for different strategies.
 
-1. How important are the first five resource clicks?  Typical Gabe decks cannot wait for the tempo hit that **evt+procons** imposes.
-2. How important is quality draw efficiency?  The difference between **evts+procons** and **evts+draw** is about a 33% increase in efficiency?  The **pvp** deck's quality draw efficiency are in-between the other two.  
-3. How important are medium and late-game credits?  The efficiency of **evts+procons** is exceptional (75% greater than **evts+draw**).
+1. How important are the first five resource clicks for your deck?  Typical Gabe decks cannot wait for the tempo hit that **evt+procons** imposes.
+2. How important is quality draw efficiency?  The difference between **evts+procons** and **evts+draw** is about a 33% increase in draw efficiency?  The **pvp** deck's quality draw efficiency are in-between the other two.  
+3. How important are mid- and late-game credits?  The efficiency of **evts+procons** is exceptional (75% greater than **evts+draw**).
 
 *Simple conclusions:* 
-- Early game econ required?  Don't use **procons** decks.  If you can burn around 4-5 clicks
+- Early game econ required?  Don't use **procons** decks.  If you can burn around 4-5 clicks, it becomes a monster.  If you can't, it isn't the econ package for you.
 - Never use a deck that relies only on **procons**.  As expected, consistency is an issue.
 - High draw efficiency, and decent credit economy = **evt+draw**.
 - Decent draw, and high credit efficiency = **procons+evts**.
 - Medium-level draw and click efficiency = **pvp+evts+draw**.
+
+## Bonus: the Sure Gamble Challenge
+
+So lets revisit a previous question:  how efficient is Sure Gamble?  Hopefully it is clear now that it highly depends on the rest of the cards in the economic package.  For simplicity, I'm just going to look at the "steady-state" efficiency once the decks get rolling, and all the cards in the initial hand have been used.
+
+- **procons**: 
+- **procons+evt**:
+- **evt**:
+- **evt+draw**:
+- **kate:pvp+evts+draw**:
 
 # FAQ
 
@@ -110,13 +120,33 @@ The results point to three significant dimensions that impact which credit and d
 
 A DES quantizes time, in our case, into clicks.  At each click, a set of events that manipulate the state of the hand, board, deck, and credit pool are executed.  An event might add future events (i.e. Earthrise Hotel sets future events for additional draw).  At its core, this is all that a DES is.
 
+## Why a simulator?
+
+Lets use the Sure Gamble example from before.  How many clicks does it cost in total?  The naive analysis is 1 to play, and 1 to draw.  But throw a Quality Time in the deck and it all changes.  Lets restate the Sure Gamble and Quality Time click costs (CC):
+
+`CC(SureGamble) = DE + 1`
+
+`CC(QualityTime) = 3CE + DE + 1`
+
+where `CE` is the credit efficiency and `DE` is the draw efficiency (note, *not* the quality draw efficiency as we don't want to ignore drawing the Sure Gamble).  The "`+ 1`" in both cases is the play click which isn't compressed (until we get Hayley).  Now what's the `CE` and `DE`?
+
+`CE = f(CC(SureGamble))`
+
+`DE = g(CC(QualityTime))`
+
+There are two functions, `f` and `g` that determine the efficiencies *based on the click costs of the economy and draw cards*.  Lets ignore for now what `f` and `g` actually are (a previous simulator attempted to define them...and failed in a sea of complexity).  Lets just point out that `CC` is dependent on `DE` and `CE`, while both `DE` and `CE` are dependent on `CC`.  This recursive relationship will likely converge, but finding a strict fixed point is quite complicated.  Determining it analyitically (i.e. with only math) is unlikely to be reasonably feasible.
+
+Now factor in the odd rules of many cards in ANR (Test Run for Magnum Opus), and you realize that simply throwing math at the problem won't be sufficient.
+
+Thus, discrete event simulator.
+
 ## What assumptions are made by the simulator?
 
 We have to make a number of assumptions so that we can get useful information out of the simulator.  These include:
 
 - Hand size is infinite.
 - We consider resource clicks.  Thus, there isn't a direct correspondence between clicks in a game, and the clicks displayed in the graphs.
-- There is currently *no interaction* between runner and corp.  The results of this simulation are meant to provide information to a runner regarding how efficient each click spent on econ/draw is.  This is the largest assumption, but is necessary to simply the game to the level where a simulation provides useful information.
+- The big one: there is currently *no interaction* between runner and corp.  The results of this simulation are meant to provide information to a runner regarding how efficient each click spent on econ/draw is.  This is the largest assumption, but is necessary to simply the game to the level where a simulation provides useful information.
 - An ordering, or priority, is assigned to different cards that is used to determine which action to take with any given click.  This ordering is derived from my own experience with playing ANR, and watching others play.
 
 However, there are many non-trivial aspects of the game we do consider:
