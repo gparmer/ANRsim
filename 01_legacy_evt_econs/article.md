@@ -1,4 +1,4 @@
-# A Simulation Study of Event-Based Runner Economies in ANR
+# A Comparison of Event-Based Runner Economies in ANR
 
 ## *Abstract* 
 
