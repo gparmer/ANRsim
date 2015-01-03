@@ -77,7 +77,7 @@ Yes, yes we are.  But that's only half the story.  The other half is quality dra
 
 So how many quality draws per resource click do each of the economic packages yield?  In the following graph, the dotted line has a slope of one, again for reference.  If we just clicked to draw, that line would result.
 
-<center><img src="draw0.png" width=500px></center>
+<center><img src="qdraw0.png" width=500px></center>
 
 **Discussion.**
 - **procons** interestingly comes out at the top of the bunch.  This is because once **procons** is installed, efficiency is one draw for one click.  The only reason the efficiency is slightly less than one is due to dead draws of the subsequent Professional Contacts.
@@ -87,7 +87,7 @@ So how many quality draws per resource click do each of the economic packages yi
 
 The next graph emphasizes the click efficiency for quality draws.  All the **draw** decks show a boost at low click numbers due to draw cards in the starting hand, and then settle into a steady-state efficiency.  Spoiler:  Andromeda is good.
 
-<center><img src="draw1.png" width=500px></center>
+<center><img src="qdraw1.png" width=500px></center>
 
 ## Implications for Deck Building
 
@@ -107,6 +107,10 @@ The results point to three significant dimensions that impact which credit and d
 ## Bonus: the Sure Gamble Challenge
 
 So lets revisit a previous question:  how efficient is Sure Gamble?  Hopefully it is clear now that it highly depends on the rest of the cards in the economic package.  For simplicity, I'm just going to look at the "steady-state" efficiency once the decks get rolling, and all the cards in the initial hand have been used.
+
+First, we have to understand the normal draw efficiency of each deck.  How many cards do you draw per click?  This doesn't consider *quality draws*, but sometimes this is still a useful metric, especially when we're determining the efficiency of a *given card*.
+
+<center><img src="draw1.png" width=500px></center>
 
 - **procons**: 
 - **procons+evt**:
