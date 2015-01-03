@@ -33,7 +33,7 @@ The rest of this article, then, looks at the click efficiency of gaining credits
 
 ## Event Economies
 
-Lets look at three prototypical runner economies: 
+Lets look at three prototypical runner economies.  The **bold** labels designate the lines within the graphs.
 
 - **evt** which is based on Sure Gamble, Dirty Laundry, and Lucky Find.
 - **draw** includes a draw package based on Quality Time and Diesel.
