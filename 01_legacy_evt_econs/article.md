@@ -1,5 +1,21 @@
 # A Comparison of Event-Based Runner Economies in ANR
 
+To the point, this article quantitatively classifies different event economies:
+
+Draw efficiency | Credit efficiency | Economic package
+------------------|-----------------|----------------------
+High | Decent | SG+DL+LF+Diesel+QT
+Decent | Very high, with a 5 click delay | PC+SG+DL+LF
+Medium | Medium | PVP+SG+DL+LF+Diesel+QT
+
+where
+- SG = Sure Gamble
+- DL = Dirty Laundry
+- LF = Lucky Find
+- Diesel = ...yeah
+- QT = Quality Time
+- PC = Professional Contacts
+
 ## *Abstract* 
 
 This article provide a simulation-driven analysis of multiple popular runner economic and draw engines in Android Netrunner (ANR).  We study the click efficiency for card draw and credit generation of different economic packages.  The goal is to provide an additional set of information for consideration in deck design, so that you can choose the proper economic engine for the tempo and timing of your deck.  When should you throw Professional Contacts in your deck?  How much better is Prepaid Kate than normal Prepaid decks?  How much better is it than normal event decks?  How important are draw cards?  For the answers to this and more, read on.
