@@ -1,8 +1,25 @@
-# A Simulation Study of Event-Based Runner Economies in ANR
+# A Comparison of Event-Based Runner Economies in ANR
+
+To the point, this article quantitatively classifies different event economies:
+
+Draw efficiency | Credit efficiency | Economic package
+------------------|-----------------|----------------------
+High | Low | SG+DL+LF+Diesel+QT
+Low | Very high, with a 5 click delay | PC+SG+DL+LF
+Medium | Medium | PVP+SG+DL+LF+Diesel+QT
+
+where
+- SG = Sure Gamble
+- DL = Dirty Laundry
+- LF = Lucky Find
+- Diesel = ...yeah
+- QT = Quality Time
+- PC = Professional Contacts
+- PVP = Prepaid Voice Pad
 
 ## *Abstract* 
 
-This article provide a simulation-driven analysis of multiple popular runner economic and draw engines in Android Netrunner (ANR).  We study the click efficiency for card draw and credit generation of different economic packages.  The goal is to provide an additional set of information for consideration in deck design, so that you can choose the proper economic engine for the tempo and timing of your deck.  When should you throw Professional Contacts in your deck?  How much better is Prepaid Kate than normal Prepaid decks?  How much better than normal event decks?  How important are draw cards?  For the answers to this and more, read on.
+This article provide a simulation-driven analysis of multiple popular runner economic and draw engines in Android Netrunner (ANR).  We study the click efficiency for card draw and credit generation of different economic packages.  The goal is to provide an additional set of information for consideration in deck design, so that you can choose the proper economic engine for the tempo and timing of your deck.  When should you throw Professional Contacts in your deck?  How much better is Prepaid Kate than normal Prepaid decks?  How much better is it than normal event decks?  How important are draw cards?  For the answers to this and more, read on.
 
 ## Why use a Simulation?
 
@@ -124,7 +141,7 @@ where `CE` is the credit efficiency and `DE` is the draw efficiency (note, *not*
 
 `DE = g(CC(QualityTime))`
 
-There are two functions, `f` and `g` that determine the efficiencies *based on the click costs of the economy and draw cards*.  Lets ignore for now what `f` and `g` actually are (a previous simulator attempted to define them...and failed in a sea of complexity).  Lets just point out that `CC` is dependent on `DE` and `CE`, while both `DE` and `CE` are dependent on `CC`.  This recursive relationship will likely converge, but finding a strict fixed point is quite complicated.  Determining it analyitically (i.e. with only math) is unlikely to be reasonably feasible.
+There are two functions, `f` and `g` that determine the efficiencies *based on the click costs of the economy and draw cards*.  Lets ignore for now what `f` and `g` actually are (a previous simulator attempted to define them...and failed in a sea of complexity).  Lets just point out that `CC` is dependent on `DE` and `CE`, while both `DE` and `CE` are dependent on `CC`.  This recursive relationship will likely converge, but finding a strict fixed point is quite complicated.  Determining it analytically (i.e. with only math) is unlikely to be reasonably feasible.
 
 Now factor in the odd rules of many cards in ANR (Test Run for Magnum Opus), and you realize that simply throwing math at the problem won't be sufficient.
 
