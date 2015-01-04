@@ -4,8 +4,8 @@ To the point, this article quantitatively classifies different event economies:
 
 Draw efficiency | Credit efficiency | Economic package
 ------------------|-----------------|----------------------
-High | Decent | SG+DL+LF+Diesel+QT
-Decent | Very high, with a 5 click delay | PC+SG+DL+LF
+High | Low | SG+DL+LF+Diesel+QT
+Low | Very high, with a 5 click delay | PC+SG+DL+LF
 Medium | Medium | PVP+SG+DL+LF+Diesel+QT
 
 where
@@ -15,6 +15,7 @@ where
 - Diesel = ...yeah
 - QT = Quality Time
 - PC = Professional Contacts
+- PVP = Prepaid Voice Pad
 
 ## *Abstract* 
 
