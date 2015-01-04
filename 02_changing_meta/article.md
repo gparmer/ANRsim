@@ -1,5 +1,12 @@
 # Analysis of a Changing Meta
 
+The meta of runner economies is always in flux.  What does it mean quantitatively to shake up the meta?  Will cards on the horizon shake up the meta?
+
+Card | Credit Efficiency | Draw Efficiency | Meta Impact
+-----|-------------------|-----------------|------------
+Lucky Find | +0.4 | -0.2 | Created Prepaid Kate
+Day Job | +0.2 | -0.2 | 1) beast-mode econ, and 2) LF replacement
+
 ## *Abstract*
 
 How does one economic engine fall out of favor in the meta, and how does another come to prominence?  In this installment of ANR analysis of runner economies, I'm going to look at how previous changes in the card pool impacted the meta, and I'll look forward to determine how the meta will change when Order and Chaos drops.  Importantly, I'll assess each economic engine's trade-offs between draws and credits.  This is a quantitative analysis, and must be pared with a qualitative analysis to determine if any given economic package is for your deck.  If you have no interest in the investigation and analysis, skip to the conclusions.
