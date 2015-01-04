@@ -2,7 +2,7 @@
 
 ## *Abstract* 
 
-This article provide a simulation-driven analysis of multiple popular runner economic and draw engines in Android Netrunner (ANR).  We study the click efficiency for card draw and credit generation of different economic packages.  The goal is to provide an additional set of information for consideration in deck design, so that you can choose the proper economic engine for the tempo and timing of your deck.  When should you throw Professional Contacts in your deck?  How much better is Prepaid Kate than normal Prepaid decks?  How much better than normal event decks?  How important are draw cards?  For the answers to this and more, read on.
+This article provide a simulation-driven analysis of multiple popular runner economic and draw engines in Android Netrunner (ANR).  We study the click efficiency for card draw and credit generation of different economic packages.  The goal is to provide an additional set of information for consideration in deck design, so that you can choose the proper economic engine for the tempo and timing of your deck.  When should you throw Professional Contacts in your deck?  How much better is Prepaid Kate than normal Prepaid decks?  How much better is it than normal event decks?  How important are draw cards?  For the answers to this and more, read on.
 
 ## Why use a Simulation?
 
