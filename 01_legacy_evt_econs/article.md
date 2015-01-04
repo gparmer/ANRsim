@@ -124,7 +124,7 @@ where `CE` is the credit efficiency and `DE` is the draw efficiency (note, *not*
 
 `DE = g(CC(QualityTime))`
 
-There are two functions, `f` and `g` that determine the efficiencies *based on the click costs of the economy and draw cards*.  Lets ignore for now what `f` and `g` actually are (a previous simulator attempted to define them...and failed in a sea of complexity).  Lets just point out that `CC` is dependent on `DE` and `CE`, while both `DE` and `CE` are dependent on `CC`.  This recursive relationship will likely converge, but finding a strict fixed point is quite complicated.  Determining it analyitically (i.e. with only math) is unlikely to be reasonably feasible.
+There are two functions, `f` and `g` that determine the efficiencies *based on the click costs of the economy and draw cards*.  Lets ignore for now what `f` and `g` actually are (a previous simulator attempted to define them...and failed in a sea of complexity).  Lets just point out that `CC` is dependent on `DE` and `CE`, while both `DE` and `CE` are dependent on `CC`.  This recursive relationship will likely converge, but finding a strict fixed point is quite complicated.  Determining it analytically (i.e. with only math) is unlikely to be reasonably feasible.
 
 Now factor in the odd rules of many cards in ANR (Test Run for Magnum Opus), and you realize that simply throwing math at the problem won't be sufficient.
 
