@@ -23,7 +23,7 @@ Anarchs are getting an economic engine that rivals powerful current economic eng
 
 With the new card draw in the form of Steelskin and Inject, and a new event for credit generation in Day Job, the Anarchs are looking to cast off their traditional weaknesses: draw and economy.  Does this add up to an economic powerhouse, or does it track the Anarch history of lagging behind?
 
-Quoting from the first article, this article `looks at the **resource click efficiency of gaining both credits and quality draws** for various economic packages`.  If this doesn't make sense, please check out the first article.
+Quoting from the first article, "this article looks at the **resource click efficiency of gaining both credits and quality draws** for various economic packages".  If this doesn't make sense, please check out the first article.
 
 ## A Warning
 
