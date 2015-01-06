@@ -38,13 +38,13 @@ Four cards will have a significant impact on Anarch economies (credits *and* dra
 - Inject (INJ)
 - Steelskin (SS)
 - Day Job (DJ)
-- Earthrise Hotel (EH)
 
-These paired with the existing event economies can be quite powerful.  Existing cards include:
+These paired with the existing event economies and resources can be quite powerful.  Existing cards include:
 
 - Sure Gamble (SG)
 - Dirty Laundry (DL)
 - Lucky Find (LF)
+- Earthrise Hotel (EH)
 
 We have invested in previous articles the difficult trade-off that each economic engine makes when trading credit efficiency for draw efficiency.  Day Job is a perfect example of this.  The clicks spent doing Day Job are quite efficient in terms of credits.  However, they are clicks that provided zero draw.  Diesel is the opposite.  Inject is bonkers because it is both.
 
