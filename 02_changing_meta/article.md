@@ -1,6 +1,6 @@
 # Analysis of a Changing Meta
 
-The meta of runner economies is always in flux.  What does it mean quantitatively to shake up the meta?  Will cards on the horizon shake up the meta?
+The meta of runner economies is always in flux.  What does it mean quantitatively to shake up the meta?  Will cards on the horizon shake up the meta?  First we look at the past:  why did Lucky Find create such a stable and lasting enconomic engine in Prepaid Kate.  Second, we'll check out the cards that recently came out, or are coming out in Order and Chaos, and see if a similar disturbance in the meta will be created.  The summary:
 
 Card | Credit Efficiency | Draw Efficiency | Meta Impact
 -----|-------------------|-----------------|------------
