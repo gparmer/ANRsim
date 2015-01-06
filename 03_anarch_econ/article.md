@@ -98,4 +98,8 @@ Third, draw efficiency:
 
 ## What's the Mystery Econ Package?
 
-Heavy influence:  LF + SG + DJ + SS + INJ + QT.  We drop the Dirty Laundries to increase the quality draw, and import Quality Time to also increase draw, and synergies well with the PVPs.
+Heavy influence:  LF + SG + DJ + SS + INJ + QT.  We drop the Dirty Laundries to increase the quality draw, and import Quality Time to also increase both draw efficiency and synergy with the PVPs.
+
+## An Implicit Cost
+
+A cost to these economic packages is one that I haven't emphasized much:  many event econs require quite a few cards.  Many people want to avoid playing upwards of 18 or more economy cards in their deck.  Event econ decks are not for everyone, and not for every deck.  I discuss the quantitative implications of this by investigating quality draw efficiency.  However, this is one of the areas that your own qualitative reasoning will have to be used.  In future articles, we'll discuss other economic engines beyond event-based economy.
