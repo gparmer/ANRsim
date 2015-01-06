@@ -115,6 +115,7 @@ The results point to three significant dimensions that impact which credit and d
 3. How important are mid- and late-game credits?  The efficiency of **evts+procons** is exceptional (75% greater than **evts+draw**).
 
 *Simple conclusions:* 
+- Each economic engine you create should understand the trade-off it makes between draw and credits.  Each of the engines I check out here make different trade-offs, and will be ideal for different decks.
 - Is early game econ required?  Don't use **procons** decks.  If you can burn around 4-5 resource clicks, it becomes a monster.  If you can't, it isn't the econ package for you.
 - Never use a deck that relies *only* on **procons**.  As expected, consistency is an issue.
 - High draw efficiency, and decent credit economy = **evt+draw**.
