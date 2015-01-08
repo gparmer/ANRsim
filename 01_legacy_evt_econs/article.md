@@ -63,7 +63,7 @@ We use simple mulligan strategies:  the Professional Contacts-based packages mul
 
 ## Credit Click Efficiency
 
-First, lets check out credit click efficiency.  In the following graphs, X-axis is the increasing number of resource clicks, and the Y-axis is the number of credits accumulated.  There are two straight dotted lines.  One represents just clicking for money (slope of 1, starting at 5 credits), and the other has a slope of 2, and is useful for reference.  We run 1024 simulated games, and these graphs report the average credits gained over a number of resource clicks.
+First, lets check out credit click efficiency.  In the following graphs, X-axis is the increasing number of resource clicks, and the Y-axis is the number of credits accumulated.  There are two straight dotted lines.  One represents just clicking for money (slope of 1, starting at 5 credits), and the other has a slope of 2, and is useful for reference.  We run 4096 simulated games, and these graphs report the average credits gained over a number of resource clicks.
 
 <center><img src="mean0.png" width=500px></center>
 
