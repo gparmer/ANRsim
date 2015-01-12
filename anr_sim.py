@@ -18,18 +18,6 @@ inithand = 5
 hist     = False
 macroclickperturn = 2
 
-def shuffle(state):
-    random.shuffle(state['deck'])
-
-def reprioritize(state, cards, prio):
-    for c in state['deck'] + state['board']:
-        for deprio in cards:
-            if c['name'] == deprio:
-                c['priority'] = prio
-
-def deprioritize(state, cards):
-    reprioritize(state, cards, -10)
-
 # simply using the discrete event simulator to emulate multiple clicks
 def multiclick_apply(state, card):
     card['clicksspent'] = card['clicksspent'] + 1
@@ -37,7 +25,7 @@ def multiclick_apply(state, card):
         add_click_action_card(state, 1, card, multiclick_apply, 5, True)
     return card
 
-default = {'name':'Default', 'drawperclick':0, 'cost':0, 'type':'anonymous', 'clickcost':1, 'clickcreditgain':0, 'creditgain':0, 'draw':0, 'mu':0, 'inplay':False, 'singleuse':True, 'clicksspent':0, 'apply':(lambda s, x: s), 'clickapply':(lambda s, x: s), 'singleton':False, 'dead':False, 'subtypes':[], 'clickupdate':None}
+default = {'name':'Default', 'drawperclick':0, 'cost':0, 'type':'anonymous', 'clickcost':1, 'clickcreditgain':0, 'creditgain':0, 'draw':0, 'mu':0, 'inplay':False, 'singleuse':True, 'clicksspent':0, 'apply':(lambda s, x: s), 'clickapply':(lambda s, x: s), 'singleton':False, 'dead':False, 'subtypes':[], 'clickupdate':None, 'tutor':None}
 draw    = {'name':'Draw', 'drawperclick':1, 'inplay':True, 'singleuse':False, 'type':'program', 'dead':True}
 cred    = {'name':'Credit', 'clickcreditgain':1, 'inplay':True, 'singleuse':False, 'type':'program', 'dead':True}
 mopus   = {'name':'Magnum Opus', 'clickcreditgain':2, 'cost':5, 'type':'program', 'singleuse':False, 'singleton':True, 'dead':True, 'mu':2}
@@ -85,54 +73,57 @@ pvp  = {'name':'Prepaid Voice Pad', 'cost':2, 'type':'hardware', 'apply':pvpmod,
 pvpk = {'name':'Prepaid Voice Pad', 'cost':1, 'type':'hardware', 'apply':pvpmod, 'dead':True}
 
 def trtutor(state, tr):
-    deck = state['deck']
-    c = None
-    for _c in deck:
-        if _c['name'] == "Magnum Opus":
-            c = _c
-            break
-    assert c != None
-    deck.remove(c)
-    prio = c['priority'] 
-    assert prio > 0
-    deprioritize(state, ['Magnum Opus', 'Self-Modifying Code', 'Test Run'])
-    state['board'].append(c)
-    c['inplay'] = True
-    assert c['priority'] > 0
-    shuffle(state)
+    c = state['deckprogs'][0]
+    card_tutor(state, c)
     def tr_removeprog(state, card):
         state['board'].remove(card)
         state['deck'].append(card)
+        state['deckprogs'] = [card] + state['deckprogs']
         card['inplay'] = False
     add_click_action_card(state, 4, c, tr_removeprog, 10, False)
     return tr
 
-def trtutorupdate(state, tr):
+def trtutorupdate(state, c):
+    assert length(state['deckprogs']) > 0
+    p = state['deckprogs'][0]
+    c['priority'] = p['priority']
     return
     
-tr = {'name':'Test Run', 'cost':3, 'apply':trtutor, 'clickcost':1, 'dead':True, 'type':'event', 'subtypes':['tutor-program'], 'clickupdate':trtutorupdate}
+tr = {'name':'Test Run', 'cost':3, 'apply':trtutor, 'clickcost':1, 'dead':True, 'type':'event', 'tutor':'program', 'clickupdate':trtutorupdate}
 
 def smctutor(state, smc):
-    deck = state['deck']
-    c = None
-    for _c in deck:
-        if _c['name'] == "Magnum Opus":
-            c = _c
-            break
-    assert c != None
-    deck.remove(c)
-    assert c['priority'] > 0
-    deprioritize(state, ['Magnum Opus', 'Self-Modifying Code', 'Test Run'])
-    state['board'].append(c)
-    c['inplay'] = True
-    assert c['priority'] > 0
-    shuffle(state)
+    c = state['deckprogs'][0]
+    card_tutor(state, c)
     return smc
 
-def smctutorupdate(state, tr):
+def smctutorupdate(state, c):
+    assert length(state['deckprogs']) > 0
+    p             = state['deckprogs'][0]
+    c['priority'] = p['priority']
+    c['cost']     = c['cost'] + 2
     return
 
-smc = {'name':'Self-Modifying Code', 'type':'program', 'cost':7, 'apply':smctutor, 'dead':True, 'subtypes':['tutor-program'], 'clickupdate':smctutorupdate}
+smc = {'name':'Self-Modifying Code', 'type':'program', 'cost':7, 'apply':smctutor, 'dead':True, 'tutor':'program', 'clickupdate':smctutorupdate}
+
+def shuffle(state):
+    random.shuffle(state['deck'])
+
+def reprioritize(state, cards, prio):
+    for c in state['deck'] + state['board']:
+        for deprio in cards:
+            if c['name'] == deprio:
+                c['priority'] = prio
+
+def deprioritize(state, cards):
+    reprioritize(state, cards, -10)
+
+# BUG: multiple singletons pulled into hand at once (in starting hand, or via draw) are counted as quality draws
+def make_dead(state, cards):
+    deprioritize(state, cards)
+    for c in state['deck'] + state['board']:
+        for d in cards:
+            if c['name'] == d:
+                c['dead'] = True
 
 # fill out all fields in a card structure with default data
 def card_data(meta, priority):
@@ -155,7 +146,9 @@ def deck_remove(state):
         if c != None:
             state['board'].remove(c)
         return None
-    return state['deck'].pop()
+    c = state['deck'].pop()
+    state['deckprogs'].remove(c)
+    return c
 
 def board_add_drawn(state, newc):
     state['board'].append(newc)
@@ -178,8 +171,13 @@ def card_use(c, state):
     draw_cards(state, c['drawperclick'])
     c['clickapply'](state, c)
 
-def card_playable(c, state):
+def card_playable(state, c):
     return state['creds'] >= c['cost']
+
+def deck_remove(state, c):
+    assert len([x for x in state['deck'] if x == c]) > 0
+    state['deck'].remove(c)
+    state['deckprogs'].remove(c)
 
 def discard(state, c):
     assert len([x for x in state['board'] if x == c]) > 0
@@ -191,21 +189,30 @@ def trash(state, c):
         c['inplay'] = False
     discard(state, c)
     
-def card_play(c, state):
+def card_activate(state, c, pay):
     assert not c['inplay']
     if c['singleuse']:
         discard(state, c)
     else:
         c['inplay'] = True
-    assert card_playable(c, state)
-    state['creds'] = state['creds'] - c['cost']
-    state['creds'] = state['creds'] + c['creditgain']
+    assert card_playable(state, c)
+    if pay:
+        gain_creds(state, -1 * c['cost'])
+    gain_creds(state, c['creditgain'])
     draw_cards(state, c['draw'])
     c['apply'](state, c)
     prio = c['priority']
     if c['singleton']:
-        deprioritize(state, [c['name']])
+        make_dead(state, [c['name']])
     c['priority'] = prio
+
+def card_play(state, c):
+    card_activate(state, c, True)
+
+def card_tutor(state, c):
+    deck_remove(state, c)
+    card_activate(state, c, False)
+    shuffle(state)
 
 def find_money(state):
     board = state['board']
@@ -213,7 +220,7 @@ def find_money(state):
         if c['inplay'] == True and c['clickcreditgain'] > 0:
             return c
         if c['cost'] <= state['creds'] and c['creditgain'] > 0:
-            assert card_playable(c, state)
+            assert card_playable(state, c)
             return c
     print "Error:  Could not find any money in:"
     print board
@@ -222,7 +229,7 @@ def find_money(state):
 def prio_sort(a, b):
     if a['priority'] > b['priority']:
         return -1
-    elif a['priority'] == b['priority'] and a['cost'] < b['cost'] and a['creditgain'] > 0:
+    elif a['priority'] == b['priority'] and ((a['cost'] < b['cost'] and a['creditgain'] > 0) or (b['tutor'] != None)):
         return -1
     else:            
         return 1
@@ -234,11 +241,11 @@ def normal_click(state):
     while True:
         assert c['name'] != "Default"
         if not c['inplay']:
-            if card_playable(c, state):
-                card_play(c, state)
+            if card_playable(state, c):
+                card_play(state, c)
             else:
                 c = find_money(state)
-                assert card_playable(c, state) or c['inplay']
+                assert card_playable(state, c) or c['inplay']
                 continue
         else:
             card_use(c, state)
@@ -314,7 +321,9 @@ def game(_deck, nclicks, mulfn, inithandsz):
         if not c['dead']:
             draw = draw + 1
     clicks = generate_def_clicks()
-    state = {'board':board, 'deck':deck, 'creds':5, 'drawn':5, 'qdrawn':draw, 'mu':4, 'history':[], 'discard':[], 'click':0, 'clicks':clicks}                         
+    progs  = [c for c in deck if c['type'] == 'program']
+    progs.sort((lambda a, b: -1 if a['priority'] > b['priority'] else 1))
+    state  = {'board':board, 'deck':deck, 'deckprogs':progs, 'creds':5, 'drawn':inithandsz, 'qdrawn':draw, 'mu':4, 'history':[], 'discard':[], 'click':0, 'clicks':clicks}
     while state['click'] < nclicks:
         click(state)
     return state
