@@ -11,6 +11,12 @@ Day Job | +0.2 | -0.2 | 1) beast-mode econ, and 2) LF replacement
 
 How does one economic engine fall out of favor in the meta, and how does another come to prominence?  In this installment of ANR analysis of runner economies, I'm going to look at how previous changes in the card pool impacted the meta, and I'll look forward to determine how the meta will change when Order and Chaos drops.  Importantly, I'll assess each economic engine's trade-offs between draws and credits.  This is a quantitative analysis, and must be pared with a qualitative analysis to determine if any given economic package is for your deck.  If you have no interest in the investigation and analysis, skip to the conclusions.
 
+## Beware:  Assumptions Ahead
+
+Any simulation of sufficiently complex systems is based on a model of the system.  That model is not perfectly accurate.  For a list of assumptions, please see the first article.  A few responses to that article pointed out a few additional assumptions.  The main addition one is that I'm assuming that dirty laundry uses a resource click.  This is obviously wrong if you have access to a server and want an access.  So take this with a grain of salt.  This information must be paired with your intuition, and other sources to determine what's best for your deck - it is only an additional input into the netrunner collective consciousness, not the final word.
+
+This article isn't an analysis of every economic engine, and this one, like the first, focuses on the Shaper economy as it is, in many ways, the easiest to understand.  To run an experiment, we have to tweak a small number of free variables, thus we're taking this a small step at a time.  If you want to skip to the punchline comparing all econs, you'll have to wait a while.  Future articles will delve further into a variety of econs.  The next will look specifically at new Anarch event-based econ options.
+
 ## The Rise of an Economic Engine
 
 I remember seeing the first Prepaid Voice Pad (PVP) decks on netrunnerdb, and appreciating the synergy.  At that time, they were a mishmash of previous Kate decks with significantly less of an emphasis on a balance between events and traditional Shaper goodness than the current prominent decks.  What was the key to the Prepaid economic revolution that made this deck prototype competitive?  PVP had been out for a while, as had most of the moving pieces.  However, when Lucky Find came out, it provided the third major form of event economy that made the Prepaids tick.  We know (historically) that the meta shifted significantly when Lucky Find appeared, so lets look at the underlying efficiency changes that motivated this change.  This will let us quantify and better understand when these shifts in the meta happen.
@@ -48,9 +54,9 @@ So what does a change in the economic meta look like?  We know that a 0.4 credit
 
 ## A Disturbance in the Meta
 
-Though a few key cards are coming (or recently dropped) concerning card draw, I'm interested here in understanding how Day Job is going to impact the meta.  Will it redefine the next runner event economies?  Will it fall at the way-side due to insufficient efficiency?  Or will its card art make it tier one, independent of any other factor?
+Though a few key cards are coming (or recently dropped) concerning card draw, I'm interested here in understanding how Day Job is going to impact the meta.  Will it redefine the Prepaid VoicePad runner event economy compositions?  Will it fall at the way-side due to insufficient efficiency?  Or will its card art make it tier one, independent of any other factor?
 
-Additionally, we recently saw the drop of influence-free draw in the form of the Earthrise Hotel.  Many have speculated that it has a place in many decks.  Lets see where its draw is beneficial.  The following graphs include:
+Additionally, we recently saw the drop of influence-free draw in the form of the Earthrise Hotel.  Many have speculated that it has a place in many decks.  Within PVP, with Shaper draw cards, it seems unlikely to be needed.  Lets confirm or refute this hypothesis.  The following graphs include:
 
 - **DJ** when they include Day Job.
 - **EH** when they include Earthrise Hotel.
@@ -127,4 +133,16 @@ We've investigated a previous shift in the meta when Lucky Find was released, an
 4. Day Job can replace Lucky Find in both Prepaid and ProCons decks.  In such cases, the credit efficiency is relatively unchanged, but the gain in influence is paid for in quality draw efficiency (around 0.2 quality draws per click less).
 5. Comparing Day Job to when Lucky Find hit the meta, we see that its impact is a little more nuanced.  It doesn't represent the credit per click efficiency increase that Lucky Find did.  However, the increase it does provide is over *an already amazing economic engine*.  Runners are being given beast-mode economies.  The trade-off is in quality draw efficiency which is negatively offset by 0.1 to 0.2 quality draws per click.  An intriguing possibility is to replace Lucky Finds with Day Jobs to gain three influence.  Credit efficiency increases, while quality draw efficiency is somewhat negatively offset.  This effectively trades influence for draw efficiency, which might be appropriate in some decks (i.e. those with many tutors...otherwise known as Prepaid Kate).
 
-That's it for this installment.  The next installment will investigate all aspects of the newly forming Anarch economies.  No longer will Anarchs be credit and draw starved.  
+That's it for this installment.  The next installment will investigate all aspects of the newly forming Anarch economies.  No longer will Anarchs be credit and draw starved!
+
+## Improvements for the Future
+
+I've received a great many suggestions for how to improve the analysis in the future.  Most good answers start with questions, and these include:
+
+- How can we take tempo and opportunity cost into account?  The cost of event cards doesn't impact the curves if they never go below the event's cost.  In the event economies, if we never go below 5 credits, then we never see the downside of Sure Gamble's cost.
+- Is there a way to investigate "quality credits" in addition to quality draws?  This is related to the previous question and might factor into the credit curve the cost of cards.
+- What about programs?  How does playing them impact this analysis?
+- Can we study consistency as a whole?
+- What about my economic package of X, Y, and Z?
+ 
+I believe that all of these considerations can be taken into account.  For the time being, I'm looking at the simpler questions (that there isn't a preexisting answer to), and with time, I'll develop the software to consider more of the depths of the game.  To state it in another way, I'm constantly look at a way to increase the complexity of the model of the game, while keeping the simulation tractable.  Please keep the suggestions coming.
