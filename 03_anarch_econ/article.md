@@ -1,6 +1,6 @@
 # The Next Generation of Anarch Event-Based Economies
 
-Order and Chaos is going to change things.  Anarch econs are *strong*.  The following are the efficiency changes versus a traditional economic package of Dirty Laundry, Sure Gamble, Lucky Find, Diesel, and Quality Time.  
+Order and Chaos is going to change things.  Anarch econs are *strong*.  The following are the efficiency changes versus a traditional economic package of Dirty Laundry, Sure Gamble, Lucky Find, Diesel, and Quality Time.    Please note that the following chart gives efficiency numbers for the later clicks in the game; for the rest of the game, keep reading!
 
 Economy | Credits/click | Quality draws/click | Compared to
 --------|---------------|---------------------|------------
@@ -23,13 +23,15 @@ Anarchs are getting an economic engine that rivals powerful current economic eng
 
 With the new card draw in the form of Steelskin and Inject, and a new event for credit generation in Day Job, the Anarchs are looking to cast off their traditional weaknesses: draw and economy.  Does this add up to an economic powerhouse, or does it track the Anarch history of lagging behind?
 
-Quoting from the first article, "this article looks at the **resource click efficiency of gaining both credits and quality draws** for various economic packages".  If this doesn't make sense, please check out the first article.
+Quoting from the first article, "this article looks at the **resource click efficiency of gaining both credits and quality draws** for various economic packages".  If this doesn't make sense, please check out the [first article](http://stimhack.com/a-comparison-of-event-based-runner-economies-in-anr/).
 
-## A Warning
+## A Warning: Simulation Limits Ahead
 
 When reading this article, you have to be particularly aware of the weaknesses of the simulation.  A large downside to Day Job is the four click cost.  Though I'm often happy to "click for eight" with Opus, I'm not sure Anarchs should be quite as willing to do the same.  Additionally, we'll see that Inject is a crazy card.  From an economic standpoint, it is.  You draw efficiently, or you get money.  When you get money, it is "free" from an economic perspective in the sense that you aren't discarding any of your econ cards (they're all hardware - PVP - and events).  For an event economy, and from the perspective of drawing and getting credits, Inject is insane.  However, this analysis ignores the realistic downsides to discarding the programs.
 
 Long story short, please be wary when reading this.  Understand that we are assessing the economic potential of the new Anarch econs.  However, they are anarchistic, and their downsides are difficult to analyze here.  As always, use this as one of the many sources of information you use when assessing how good cards are for your deck.
+
+Also please see the limitations of the simulation and FAQ from the [first article](http://stimhack.com/a-comparison-of-event-based-runner-economies-in-anr/).
 
 ## The New Anarch Economies
 
@@ -94,12 +96,16 @@ Third, draw efficiency:
 **Discussion.**
 
 - As it turns out, you throw PVP in with a bunch of events, and out pops some pretty amazing economic engines.  The efficiency of the blue line is truly amazing for credit generation, topping out at 1.7 credits per click.  Unfortunately, we can see that the draw is pretty weak, floating around 0.35 quality draws per click.  Note that this is getting to be due to the fact that there are so many econ cards in the deck, that it is hard to find a quality draw.
-- The economic package that uses EH for draw, but drops LF actually does pretty great.  It is a little slower to get going, but is competitive with the PVP Kate (+DJ) economy.  That's quite an about-face for Anarch that now have a brilliant *influence-free* package that yields fantastic credit, and good quality draw potential.
+- The economic package that uses EH for draw, but drops LF actually does pretty great.  It is a little slower to get going, but is competitive with the PVP Kate (+DJ) economy.  That's quite an about-face for Anarch that now have a brilliant *influence-free* package that yields fantastic credit, and good quality draw potential.  Of course, it is not always straight-forward to decide if EH is good for your deck.  I think Steven Wooley stated it best in The Source discussion on [Run Last Click](http://runlastclick.blogspot.com/2015/01/episode-24-on-source.html) - it really depends on your deck.
 
 ## What's the Mystery Econ Package?
 
-Heavy influence:  LF + SG + DJ + SS + INJ + QT.  We drop the Dirty Laundries to increase the quality draw, and import Quality Time to also increase both draw efficiency and synergy with the PVPs.
+Heavy influence:  LF + SG + DJ + SS + INJ + QT.  We drop the Dirty Laundries to increase the quality draw, and import Quality Time to also increase both draw efficiency and synergy with the PVPs.  It seems to make a decent trade between draw and credits, but is pretty heavy on the influence.
 
 ## An Implicit Cost
 
 A cost to these economic packages is one that I haven't emphasized much:  many event econs require quite a few cards.  Many people want to avoid playing upwards of 18 or more economy cards in their deck.  Event econ decks are not for everyone, and not for every deck.  I discuss the quantitative implications of this by investigating quality draw efficiency.  However, this is one of the areas that your own qualitative reasoning will have to be used.  In future articles, we'll discuss other economic engines beyond event-based economy.
+
+## The Future
+
+Please see the [second article](http://stimhack.com/quantanr-analysis-of-a-changing-meta/) for some future improvements, when I have the time.  A few people on the forums had some great insights into how to take into account the costs of runs and asset trashing.  Check out the forums for that article, and continue the discussion for this one.  Thanks @PeekaySK,  @Nordicstrike, and the others.  Hopefully I can integrate them over time.
