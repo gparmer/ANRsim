@@ -40,7 +40,7 @@ pc      = {'name':'Professional Contacts', 'clickcreditgain':1, 'drawperclick':1
 
 def inj_apply(state, c):
     for i in range(4):
-        newc = deck_remove(state)
+        newc = deck_get(state)
         if newc == None:
             return
         # assume that the default cards are programs...
@@ -140,14 +140,15 @@ def find_card(state, name):
             return c
     return None
 
-def deck_remove(state):
+def deck_get(state):
     if len(state['deck']) == 0:
         c = find_card(state, 'Draw')
         if c != None:
             state['board'].remove(c)
         return None
     c = state['deck'].pop()
-    state['deckprogs'].remove(c)
+    if c in state['deckprogs']:
+        state['deckprogs'].remove(c)
     return c
 
 def board_add_drawn(state, newc):
@@ -158,7 +159,7 @@ def board_add_drawn(state, newc):
     
 def draw_cards(state, ncards):
     for i in range(ncards):
-        newc = deck_remove(state)
+        newc = deck_get(state)
         if newc == None:
             return
         board_add_drawn(state, newc)
@@ -447,7 +448,92 @@ def plot_game(creds, drawn, qdrawn, option, deriv, c, l):
             break
     plt.title(name)
     plt.grid(True)
+
+def percentile(percent, creds):
+    ninety = []
+    for i in range(nclicks):
+        val = copy.copy(creds[i])
+        val.sort()
+        assert len(val) == nsamples
+        idx = int(float(nsamples)*percent)
+        assert val[idx-1] <=  val[idx] <= val[idx+1]
+        # smooth the value over 20 iterations
+        ninety.append(np.mean(val[idx-10:idx+10]))
+    return ninety
     
+def plot_deck(sp, creds, drawn, qdrawn, format, _label):
+    arr  = np.array(creds)
+    qds  = np.array(qdrawn)
+    #ress = np.add(arr, qds)
+    ress = arr + qds
+    ds   = np.array(drawn)
+    np.sort(arr)
+
+    mean  = np.mean(arr, axis=1)
+    meand = derivative_fn(mean)
+
+    dmean = np.mean(drawn, axis=1)
+    qmeand = derivative_fn(qmean)
+    qdmean = np.mean(qdrawn, axis=1)
+    qdmeand = derivative_fn(qdmean)
+    
+    res  = np.mean(ress, axis=1)
+    resd = derivative_fn(res)
+
+    std  = np.std(arr, axis=1)
+
+    ten        = percentile(0.1)
+    twentyfive = percentile(0.25)
+    fifty      = percentile(0.5)
+
+    sp[0,0].plot(range(nclicks), mean, format, label=_label, linewidth=3)
+    sp[1,0].plot(range(nclicks), meand, format, label=_label, linewidth=3)
+
+    sp[0,1].plot(range(nclicks), qdmean, format, label=_label, linewidth=3)
+    sp[1,1].plot(range(nclicks), qdmeand, format, label=_label, linewidth=3)    
+
+    sp[0,2].plot(range(nclicks), res, format, label=_label, linewidth=3)
+    sp[1,2].plot(range(nclicks), resd, format, label=_label, linewidth=3)
+
+    sp[2,0].plot(range(nclicks), fifty, format, label=_label, linewidth=3)
+    sp[2,1].plot(range(nclicks), twentyfive, format, label=_label, linewidth=3)
+    sp[2,2].plot(range(nclicks), ten, format, label=_label, linewidth=3)    
+    
+def plot_defaults(sp):
+    for i in range(3):
+        sp[0,i].plot(range(nclicks), map(lambda x: 5 + x, range(nclicks)), "k:")
+        sp[0,i].plot(range(nclicks), map(lambda x: 5 + 2*x, range(nclicks)), "k:", color="#777777")
+    for i in range(3):
+        sp[1,i].plot(range(nclicks), [1] * nclicks, "k:")
+        sp[1,i].plot(range(nclicks), [2] * nclicks, "k:", color="#777777")
+    for i in range(1,3):
+        sp[0,i].plot(range(nclicks), map(lambda x: 5 + x, range(nclicks)), "k:")
+    sp[0,0].set_title('Credits')
+    sp[0,1].set_title('Quality Draws')
+    sp[0,2].set_title('Resources')
+    sp[1,0].set_title('Credits/Click')
+    sp[1,1].set_title('Quality Draws/Click')
+    sp[1,2].set_title('(Creds+Quality Draws)/Click')
+    sp[2,0].set_title('Credits in 50% Game')
+    sp[2,1].set_title('Credits in 25% Game')
+    sp[2,2].set_title('Credits in 10% Game')
+    for i in range(3):
+        sp[2,i].xlabel('Clicks')
+    
+def plot_alldecks(creds, drawns, qdrawns, formats, labels):
+    f, sp = plt.subplots(3, 3)
+    plot_defaults(sp)
+    #for cs, ds, qds, fmt, lbl in zip(creds, drawns, qdrawns, formats, labels):
+    #plot_deck(sp, cs, ds, qds, fmt, lbl)
+    for i in range(3):
+        for j in range(3):
+            sp[i,j].plot()
+    lgd = sp[2,1].legend(loc=9, bbox_to_anchor=(0.5, -0.05), fancybox=True, shadow=True, ncol=3)
+    art = []
+    art.append(lgd)
+    plt.grid(True)
+    plt.savefig('all.png', additional_artists=art, bbox_inches="tight")
+        
 def copies(c, prio, ncpys):
     return [copy.deepcopy(card_data(c, prio)) for nop in range(ncpys)]
 
@@ -558,11 +644,24 @@ if len(sys.argv) > 1:
         hist = True
 
 inputs = inputs3a
-games = []
+games   = []
+creds   = []
+draws   = []
+qdraws  = []
+formats = []
+labels  = []
 for i in range(len(inputs)):
     c, d, qd = game_exec(inputs[i][0], inputs[i][1], inputs[i][2])
     games.append((c, d, qd, inputs[i][3], inputs[i][4]))
+    creds.append(c)
+    draws.append(d)
+    qdraws.append(qd)
+    formats.append(inputs[i][3])
+    labels.append(inputs[i][4])
 
+plot_alldecks(creds, draws, qdraws, formats, labels)
+
+plt.clf() # clear the output
 for outputtype in ['mean', 'stddev', '90p', 'draw', 'qdraw', 'res']:
     for deriv in [False, True]:
         for (c, d, qd, plottype, name) in games:
