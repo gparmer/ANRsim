@@ -34,4 +34,42 @@ The analysis of a single card in a vacuum (an arguably useless exercise) is a de
 
  7a. **Preference for code-gates.** Reinforcing 6., as the decoder is so central, the runner almost always prefers to see code-gates.  This is the motivation behind Kit destruction decks, and, ironically, the reason Spooned decks aren't that great.  A good corp will have a code-gate on the outside anyway, so stripping that of with Spooned doesn't do much if our decoder is efficient.
  
-8. **Focused application of influence.** Ten influence seems to be one of the biggest forum topics about Kit.  "They should have made it 12" calls ring out in despiration.  Regardless, the cardboard is printed with 10, so deck design has to accommodate that.  With 10, there is hardly any space for influence to be applied arbitrarily, and it must support the main goals of the overall deck. 
+8. **Focused application of influence.** Ten influence seems to be one of the biggest forum topics about Kit.  "They should have made it 12" calls ring out in despiration.  Regardless, the cardboard is printed with 10, so deck design has to accommodate that.  With 10, there is hardly any space for influence to be applied arbitrarily, and it must support the main goals of the overall deck.
+
+## Kit Economies
+
+This is one of the least interesting aspects of a Kit deck, mainly because there aren't many options.  They are:
+
+1. *Magnum Opus focused.*  A single card to provide all of your economic needs sounds wonderful.  And it is, in the right deck.  The downsides are the constrained memory, the tempo hit early on to get the Opus out, the card slots for the tutors to make that consistent, and the difficulty of balancing both card draw and clicking your Opus.  To approach this challenge, cards that aid in draw are required (Diesel is almost mandatory, and Symmetric Visage or Quality Time are great in different decks).
+2. *Resource focused.*  Kati is the staple of many decks, and this would be no different.  Pair that with Daily Casts, Symmetric Visage, and enough events to keep afloat, and you have a decent economic core.
+3. *Event focused.*  Kit is not Kate when it comes to leveraging Prepaid Voice Pads, and 3 lucky finds eat up too much of Kit's influence.  Day Jobs are a decent replacement, but are often difficult to use.  Regardless, this *can* work in the right deck, and might even make decent use of Comet (though doubtfully along-side Prepaids).
+
+## Kit Prototypes
+
+Given the different implications, what are the main focuses of Kit?  If we chose a few different styles that Kit wants to play, what are they?
+
+#### Aggression
+
+This prototype feeds off of Kit's ability to get in early to as quickly as possible turn clicks into scored agendas.
+
+The core of the deck is
+
+- Cyber-Cypher, ZU.13, or in some cases Gordian Blade.  The emphasis here is that it is cheap enough to get out early.
+- Maker's Eye
+- Legwork
+- R&D Interface
+- Modded
+
+This can be augmented with a number of pressure and disuption cards like Utopia Shard and Imp.  Given the emphasis on impactful runs, and minimal rig, 
+
+#### Econ Denial
+
+This prototype attempts to force early ice rezzes to keep the corp poor, while constantly building.  Early random accesses will yield some points, but an economic lead later on will finish it later.
+
+#### Econ Efficiency
+
+This prototype focuses on a steady build up of board state over time, culminating in cheap, impactful runs.  It relies on Kit's ability to prevent the corp from running away with the game early on.
+
+#### Destruction Kit
+
+If Kit doesn't like deep servers, why not kill the ice till they aren't deep anymore!  This is a long-studied prototype that hasn't seen much play recently.
