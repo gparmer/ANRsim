@@ -54,22 +54,48 @@ This prototype feeds off of Kit's ability to get in early to as quickly as possi
 
 The core of the deck is
 
-- Cyber-Cypher, ZU.13, or in some cases Gordian Blade.  The emphasis here is that it is cheap enough to get out early.
+- Cyber-Cypher, ZU.13, or, in some cases, Gordian Blade.
 - Maker's Eye
 - Legwork
+
+This can be augmented with a number of pressure and disuption cards like Utopia Shard and Imp to slow down the corp.  Siphons have been known to venture into these decks, but given the limited influence, this is a limiting option.  Given the emphasis on impactful runs and minimal rig, this deck wants to score agendas fast.  The emphasis in the decoder is that it is cheap enough to get it out and running early.  Once the corp has two layers of ice, you've lost momentum, and have to dig.  The game is rarely won early, but the emphasis is on having a lead going into the later game.  Some combination of the following cards flesh out this next stage.
+
+- Diesel/Quality Time
 - R&D Interface
 - Modded
+- Stimhack
 
-This can be augmented with a number of pressure and disuption cards like Utopia Shard and Imp.  Given the emphasis on impactful runs, and minimal rig, 
+The econ for this style of deck is often based around events to maintain a high tempo early, but without prepaids, it peters out late game.  Thus, the pace of runs slows significantly, so they must remain impactful.  Interesting variants of this use their influence to maintain early pressure via 
 
-#### Econ Denial
+- Sneakdoor Beta (often comboed with Nerve Agent for sustained HQ pressure)
+- Parasite
 
-This prototype attempts to force early ice rezzes to keep the corp poor, while constantly building.  Early random accesses will yield some points, but an economic lead later on will finish it later.
+Both of these cards force the corp to play and pay for more ice.  Sneakdoor requires protecting another server (two layers of ice), and Parasite eats away existing walls.
 
-#### Econ Efficiency
+Why does this deck slow down the transition into late game?  Unlike Prepaid Kate, the econ engine doesn't grow over time, and many of the pieces to maintain pressure eat into what would be a remote threatening credit pool.  This means that if glacier makes it to a firm 8 ice on the board, you're in trouble.  Not terminal trouble, as an impactful Maker's Eye run can still win the game, but the number of such runs is quite limited.  This deck often wants to take a hint from Andy and include 
 
-This prototype focuses on a steady build up of board state over time, culminating in cheap, impactful runs.  It relies on Kit's ability to prevent the corp from running away with the game early on.
+- Kati Jones
+
+To attempt to maintain some late-game, long-lasting economy, Kati is a savior.  Just watch out for those Snatch and Grabs that are running around.
+
+**Match-ups.** As I want this article to be fairly general, and not too specific to any meta, I'll attempt to be fairly general here.  Hate cards that force gear-checks outside of normal ice mechanics (e.g. wraparound) require fast answers.  Metas where all you see are Next Silvers and Ice Walls aside, if you see a deck packing an Inti or two often have some aspect of this prototype.  Cheap ice can ruin your day as two layers can appear quickly, but cheap ice generally has less strength.  Yet another argument for Parasite.  Cheap, high tax ice can hurt early game.  The best example of this is Eli 1.0.  Identifying which ice fall into this category, and including the perfect tools can help.  Atman, though expensive, can maintain pressure through Elis.  Sharpshooter blows throw destroyers.  However, the cost of such tools, and their impact on tempo must be considered.  Corps that require multiple runs per turn (RP and Off the Grid) are actually somewhat OK with this deck.  The emphasis is on 1) centrals, and 2) early game, neither of which are impacted greatly by the multiple run constraints. 
+
+**Anti-synnergies.** If ever there was a deck to *not* put Professional Contacts in, this is it.  Though my previous analysis of ProCons plus event economy in the QuantANR series on stimhack shows that it is a beast, that is, of course, not the only consideration for its use in a deck.  This deck dies to the multi-turn tempo hit from Professional Contacts.  Though an argument could be made for Opus, it will suffer from the same problems, though to a lesser degree.
+
+#### Economy Efficiency
+
+This prototype focuses on a steady build up of board state over time, culminating in cheap, impactful central runs while threatening remotes.  It relies on Kit's ability to prevent the corp from running away with the game early on to get into a later game position of dominance.
+
+#### Economy Denial
+
+This prototype attempts to force early ice rezzes to keep the corp poor, while constantly building.  Early random accesses will yield some points, but an economic lead later on will finish it.
 
 #### Destruction Kit
 
 If Kit doesn't like deep servers, why not kill the ice till they aren't deep anymore!  This is a long-studied prototype that hasn't seen much play recently.
+
+## First Principles Deck Construction vs. Netdecking
+
+If you like ANR mainly or solely for the competition, or for the actual act of playing, then I see no reason not to netdeck (i.e. look at the winning lists on stimhack.com, and play them).  I have the greatest respect for players that can play at the highest levels.  
+
+However, if you enjoy the act of building the decks by considering all posibilities, and choosing a path for which to optimize, then I find an approach based on first priniciples deduced by following the implications starting from the runner identity and their faction to be a productive and fun way of analysing a deck.  Note that this focus is quite different from taking *good cards* and putting them together.  I certainly play with cards that most people don't, but they are in the deck for a reason: to promote the main theme and goals of the deck.  Given the tempo and focus of the deck, an appropriate economic package is chosen.  As new cards are revealed, they can open up new prototypes (e.g. refractor), or they can simply promote existing ones, causing a re-think.
