@@ -6,8 +6,10 @@ This article is *not* intending to tell you "how its done", and is not trying to
 
 1. identifying all deductive inferences you can draw about the areas of both strength and weakness of a specific card (or small set of related cards), 
 2. mentally create sets of scenarios which best utilize the card, for example, rush, resource denail, etc...,
-3. identify sets of cards that best contribute to, and mitigate the weaknesses of those scenarios, and 
-4. choose your decks based on cards from those sets that optimize around the specific card's strongest scenarios.
+3. identify sets of cards that best contribute to these scenarios, 
+4. identify the weaknesses of these scenarios, 
+5. identify sets of cards that mitigate the weaknesses of those scenarios, 
+6. choose your decks based on cards from those sets that optimize around the specific card's strongest scenarios.
 
 Last, this procedure must be repeated for each card (or set of related cards) in the set.  When optimizing for a specific scenario (i.e. early rush, resource denial, etc...), each card should not only promote this or mitigate its shortcomings, but should also work well with other cards in the deck.  Thus this step of re-analysing each card is important.  One could accurately say that we are simply seeking synnergy when conducting this entire exercise.  However, this procedure forces us to go beyond surface-level synnergies between cards, and see the sets of cards that complement strategies, for example, Stimhack being quite strong in Magnum Opus-based economies.
 
@@ -56,13 +58,21 @@ The analysis of a single card in a vacuum (an arguably useless exercise) is a de
 Given the list of deductions we've made from the identity's ability, we can create a number of abstractions, or deck prototypes that are suppored by the deductions.  In some sense, we're looking for the "natural conclusions" of the deductions.  These include (though likely aren't limited to):
 
 - *Aggression* - Get in early, and turn clicks into agendas.  Fast.
-- *Economy Denial* - 
-- *Economic Efficiency* - 
-- *Ice Destruction* - 
+- *Economy Denial* - Kit's ability pressures early game rezzes.  Constant runs turn these rezzes into singificant economic pressure.
+- *Economic Efficiency* - If your code gate's efficient, you're essentially bypassing the costs of at least one ice per turn.
+- *Ice Destruction* - We don't like layered ice, so pare down the layers!
+
+Lets dive in to each.  
 
 #### Aggression
 
-This prototype feeds off of Kit's ability to get in early to as quickly as possible turn clicks into scored agendas.
+This prototype feeds off of Kit's ability to get in early to turn clicks into scored agendas as quickly as possible.  This follows from the following deductions from Kit's card:
+
+- **One decoder to rule them all (#1).** Once Kit has her decoder out, she avoids early gear checks (#1a).  Thus she can often get in past when other runners need to focus on digging for breakers.
+- **Early economic pressure (#5).** The longer that early game lasts (i.e. when Kit can get in without additional significant gear-checks), the better for an aggro build.  When the corp is rezzing ice, it often keeps them poorer than they want, and prolongs Kit's accesses.  It should be noted that the longer this phase is maintained, the more agendas will pile up in HQ, increasing the chance of hitting them on access.
+- **Preference for shallow servers (#3).** Shallow servers exist, if ever, early game.  So why not go petal to the metal then!
+
+*Weaknesses.*  Once gear checks have begun, the corp is often reasonably set up, so finding digging becomes a priority.  This tends to be a large scoring window for the corp.  Naturally, if you don't win early, and especially if you don't get a substantial lead early, any corp teched for late game (e.g. RP) will likely run all over you.  Given the focus on the early game, you need to have an economic back-up plan that will carry you into late.
 
 #### Economy Efficiency
 
