@@ -12,7 +12,7 @@ import scipy as sp
 import scipy.stats
 
 nclicks  = 30
-nsamples = 512 # number of simulated games per configuration
+nsamples = 128 # number of simulated games per configuration
 decksize = 45
 inithand = 5
 hist     = False
@@ -514,11 +514,11 @@ def plot_defaults(sp):
     sp[1,0].set_title('Credits/Click')
     sp[1,1].set_title('Quality Draws/Click')
     sp[1,2].set_title('(Creds+Quality Draws)/Click')
-    sp[2,0].set_title('Credits in 50% Game')
-    sp[2,1].set_title('Credits in 25% Game')
-    sp[2,2].set_title('Credits in 10% Game')
+    sp[2,0].set_title('Credits: 50% Game')
+    sp[2,1].set_title('25% Game')
+    sp[2,2].set_title('10% Game')
     for i in range(3):
-        sp[2,i].xlabel('Clicks')
+        sp[2,i].set_xlabel('Clicks')
     
 def plot_alldecks(creds, drawns, qdrawns, formats, labels):
     f, sp = plt.subplots(3, 3)
@@ -661,21 +661,21 @@ for i in range(len(inputs)):
 
 plot_alldecks(creds, draws, qdraws, formats, labels)
 
-plt.clf() # clear the output
-for outputtype in ['mean', 'stddev', '90p', 'draw', 'qdraw', 'res']:
-    for deriv in [False, True]:
-        for (c, d, qd, plottype, name) in games:
-            plot_game(c, d, qd, outputtype, deriv, plottype, name)
-        if deriv:
-            plt.legend(loc='lower right')
-            derivative = 1
-        else:
-            plt.legend(loc='upper left')
-            derivative = 0
-            if outputtype == 'draw' or outputtype == 'qdraw':
-                plt.axis([0,29,0,30])
-            else:
-                plt.axis([0,29,0,40])
-        plt.savefig(outputtype + str(derivative) + '.png')
-        plt.clf() # clear the output
-#plt.show()
+# plt.clf() # clear the output
+# for outputtype in ['mean', 'stddev', '90p', 'draw', 'qdraw', 'res']:
+#     for deriv in [False, True]:
+#         for (c, d, qd, plottype, name) in games:
+#             plot_game(c, d, qd, outputtype, deriv, plottype, name)
+#         if deriv:
+#             plt.legend(loc='lower right')
+#             derivative = 1
+#         else:
+#             plt.legend(loc='upper left')
+#             derivative = 0
+#             if outputtype == 'draw' or outputtype == 'qdraw':
+#                 plt.axis([0,29,0,30])
+#             else:
+#                 plt.axis([0,29,0,40])
+#         plt.savefig(outputtype + str(derivative) + '.png')
+#         plt.clf() # clear the output
+# #plt.show()
