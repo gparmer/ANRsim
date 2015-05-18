@@ -50,7 +50,7 @@ It also synergizes amazingly with a few of the cores of the deck:
  3. trash Crisium Grid, 
  4. make another run through the HQ ice, and 
  5. only *then* run on the OtG server.  
- If you lose a psi game -- make another taxing run.  Can't break Excalibur (did I mention the Excalibur on HQ)?  Make all of these runs be at-most one per turn.  If the runner is able to trash Caprice or Crisium, often by going broke, bring 'em back next turn with Archived Memories.  I've even brought back OtG from my heap two times in a game before winning.
+If you lose a psi game -- make another taxing run.  Can't break Excalibur (did I mention the Excalibur on HQ)?  Make all of these runs be at-most one per turn.  If the runner is able to trash Caprice or Crisium, often by going broke, bring 'em back next turn with Archived Memories.  I've even brought back OtG from my heap two times in a game before winning.
 
 This is where the name of the deck comes from.  **CI Lock**, though unimaginative, simply means that once the late-game setup is in place, the corp often has a complete lock on the game.
 
