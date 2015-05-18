@@ -1,4 +1,4 @@
-# Collateral Damage: Cerebral Imaging in an Adversarial Meta
+# Collateral Damage: Cerebral Imaging in an Adversarial Meta, Part I
 
 I have a confession to make:  I am a serial Cerebral Imaging (CI) player.  It is clear that we aren't seeing much CI being played currently, and haven't for a while.  I'll focus in this article why I believe this is, by studying the meta's impact on or large-handed hero.  The next article will investigate what can be done to make CI *somewhat* viable again.
 
